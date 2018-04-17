@@ -1,7 +1,7 @@
 {
-  "name": "my-react",
+  "name": "recipe-box",
   "version": "1.0.0",
-  "description": "A Simple Reactjs Scaffolding",
+  "description": "Recipe Box using React js",
   "main": "index.js",
   "scripts": {
     "bundle": "webpack",
@@ -17,17 +17,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/GaneshmKumar/my-react.git"
+    "url": "git+https://github.com/GaneshmKumar/RecipeBox.git"
   },
   "keywords": [
-    "React Scaffolding",
-    "React app"
+    "Freecodecamp recipe box",
+    "Recipe box"
   ],
-  "homepage": "https://ganeshmkumar.github.io/my-react",
+  "homepage": "https://ganeshmkumar.github.io/RecipeBox",
   "author": "GaNeShKuMaRm <ganeshkumar.m1996@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "axios": "^0.18.0",
     "classnames": "^2.2.5",
     "prop-types": "^15.6.1",
     "react": "^16.2.0",

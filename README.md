@@ -1,7 +1,3 @@
-# my-react
+# Recipe Box
 
-A Simple Reactjs Scaffolding
-
-* `git clone https://github.com/GaneshmKumar/my-react.git`
-* `cd my-react`
-* `npm i`
+Recipe app using React js
