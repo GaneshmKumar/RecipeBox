@@ -1,0 +1,21 @@
+.nav {
+  position: fixed;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+
+  .app-title {
+    margin: 0 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-family: 'Gugi', cursive;
+
+    a {
+      color: #fafafa;
+      float: left;
+      height: 50px;
+      padding: 10px 10px;
+      line-height: 20px;
+    }
+  }
+}

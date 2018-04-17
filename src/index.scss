@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=Gugi|Roboto');
+
+:root {
+  --app-color: #4867AA;
+  --white: #FAFAFA;
+}
+
+body {
+  overflow: hidden;
+  margin: 0 0;
+
+  input, button {
+    outline: none;
+  }
+
+  a, a:hover {
+    text-decoration: none;
+  }
+}

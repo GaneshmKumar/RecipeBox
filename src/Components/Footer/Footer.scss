@@ -1,0 +1,17 @@
+.footer {
+  background: var(--app-color);
+  position: relative;
+  font-family: 'Roboto', sans-serif;
+
+  .copyright {
+    text-align: center;
+    position: relative;
+    font-size: 12px;
+    top: 5px;
+    color: var(--white);
+
+    a {
+      color: var(--white);
+    }
+  }
+}
