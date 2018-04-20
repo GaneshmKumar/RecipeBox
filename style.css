@@ -1,0 +1,49 @@
+@import url(https://fonts.googleapis.com/css?family=Gugi|Roboto|Jua|Lobster);:root {
+  --white: #FFFFFF;
+  --red: #D84D4D; }
+
+body {
+  overflow: hidden;
+  margin: 0 0; }
+  body input, body button {
+    outline: none; }
+  body a, body a:hover {
+    text-decoration: none; }
+.app {
+  display: grid;
+  grid-template-rows: 60px auto 30px;
+  height: 100vh; }
+.header {
+  background: var(--white); }
+.footer {
+  background: var(--white);
+  position: relative;
+  font-family: 'Roboto', sans-serif; }
+  .footer .copyright {
+    text-align: center;
+    position: relative;
+    font-size: 12px;
+    top: 5px;
+    color: var(--red);
+    line-height: 20px; }
+    .footer .copyright a {
+      color: var(--red); }
+.nav {
+  position: fixed;
+  right: 0;
+  left: 0;
+  z-index: 1030; }
+  .nav .app-title {
+    margin: 0 0;
+    font-family: 'Lobster', cursive;
+    font-weight: normal;
+    font-size: 28px;
+    margin-left: 15px; }
+    .nav .app-title a {
+      color: var(--red);
+      float: left;
+      height: 50px;
+      padding: 10px 10px;
+      line-height: 40px; }
+
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzdHlsZS5jc3MiLCJzb3VyY2VSb290IjoiIn0=*/
