@@ -6,16 +6,17 @@
 
   .app-title {
     margin: 0 0;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    font-family: 'Gugi', cursive;
+    font-family: 'Lobster', cursive;
+    font-weight: normal;
+    font-size: 28px;
+    margin-left: 15px;
 
     a {
-      color: #fafafa;
+      color: var(--red);
       float: left;
       height: 50px;
       padding: 10px 10px;
-      line-height: 20px;
+      line-height: 40px;
     }
   }
 }

@@ -1,5 +1,5 @@
 .footer {
-  background: var(--app-color);
+  background: var(--white);
   position: relative;
   font-family: 'Roboto', sans-serif;
 
@@ -8,10 +8,11 @@
     position: relative;
     font-size: 12px;
     top: 5px;
-    color: var(--white);
+    color: var(--red);
+    line-height: 20px;
 
     a {
-      color: var(--white);
+      color: var(--red);
     }
   }
 }

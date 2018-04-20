@@ -5,9 +5,9 @@ class NavBar extends Component {
   render () {
     return (
       <nav className="nav">
-        <h2 className="app-title">
+        <h1 className="app-title">
           <a href="/">Recipe Box</a>
-        </h2>
+        </h1>
       </nav>
     );
   }
