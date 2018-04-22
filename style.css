@@ -15,12 +15,12 @@ body {
     text-decoration: none; }
   body textarea:focus {
     outline: none; }
+.header {
+  background: var(--white); }
 .app {
   display: grid;
   grid-template-rows: 60px auto 30px;
   height: 100vh; }
-.header {
-  background: var(--white); }
 .footer {
   background: var(--white);
   position: relative;
