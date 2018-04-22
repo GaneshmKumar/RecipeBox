@@ -1,12 +1,23 @@
 .recipe-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 100px;
   margin-top: 30px;
+  grid-row-gap: 20px;
+}
+
+.recipe-modal-container.modal-open {
+  overflow: hidden;
+}
+
+.recipe-modal-container {
+  position: relative;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 @media screen and (max-width: 783px) {
   .recipe-container {
     grid-template-columns: 1fr;
-    grid-auto-rows: 100px;
   }
 }

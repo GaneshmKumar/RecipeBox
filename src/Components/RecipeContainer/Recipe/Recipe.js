@@ -10,9 +10,11 @@ class Recipe extends Component {
   }
 
   render () {
+    const { recipe, _openRecipe } = this.props;
+
     return (
-      <div className="recipe" style={this._getStyle()}>
-        { this.props.recipe.name }
+      <div className="recipe" role="button" data-id={recipe.id} style={this._getStyle()} onClick={_openRecipe} tabIndex={0}>
+        { recipe.name }
       </div>
     );
   }

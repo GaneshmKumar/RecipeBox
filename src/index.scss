@@ -4,6 +4,9 @@
   --white: #FFFFFF;
   --red: #D84D4D;
   --light-black: #414141;
+  --overlay: rgba(0,0,0,0.5);
+  --success: #449D44;
+  --danger: #FF4436;
 }
 
 body {
@@ -16,5 +19,9 @@ body {
 
   a, a:hover {
     text-decoration: none;
+  }
+
+  textarea:focus {
+    outline: none;
   }
 }
