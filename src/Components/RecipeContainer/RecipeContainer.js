@@ -5,8 +5,10 @@ import Recipe from './Recipe/Recipe';
 import RecipeModal from './RecipeModal/RecipeModal';
 
 const colors = ['#F44336', '#6A1B9A', '#283593', '#19bd9b', '#689F38', '#EF6C00', '#4E342E', '#424242'];
-const recipes = JSON.parse(localStorage.getItem('recipes')).length > 0 ?
-  JSON.parse(localStorage.getItem('recipes')) :
+const localStorageRecipes = JSON.parse(localStorage.getItem('recipes'));
+
+const recipes = localStorageRecipes && localStorageRecipes.length > 0 ?
+  localStorageRecipes :
   [
     {
       id: shortid.generate(),
@@ -43,6 +45,10 @@ class RecipeContainer extends Component {
       },
       isModalOpen: false
     };
+  }
+
+  componentDidMount () {
+    this._updateLocalStorage(this.state.recipes);
   }
 
   _openRecipe (e) {
