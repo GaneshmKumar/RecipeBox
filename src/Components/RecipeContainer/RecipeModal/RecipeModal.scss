@@ -23,9 +23,10 @@
         padding-left: 5px;
         margin: 0 0;
         display: block;
-        border: solid 1px #212121;
+        border: solid 1px var(--light-black);
         border-radius: 5px;
         margin-bottom: 10px;
+        font-size: 18px;
       }
 
       .recipe-ingredients {
@@ -55,6 +56,11 @@
       .btn-success {
         border: solid 1px var(--success);
         background: var(--success);
+      }
+
+      .btn-warning {
+        border: solid 1px var(--warning);
+        background: var(--warning);
       }
     }
 }

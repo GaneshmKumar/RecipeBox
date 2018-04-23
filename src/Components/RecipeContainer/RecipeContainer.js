@@ -4,11 +4,10 @@ import './RecipeContainer.scss';
 import Recipe from './Recipe/Recipe';
 import RecipeModal from './RecipeModal/RecipeModal';
 
-const colors = ['#F44336', '#6A1B9A', '#283593', '#19bd9b', '#689F38', '#EF6C00', '#4E342E', '#424242'];
+const colors = ['#6A1B9A', '#283593', '#F44336', '#19bd9b', '#689F38', '#EF6C00', '#4E342E', '#424242'];
 const localStorageRecipes = JSON.parse(localStorage.getItem('recipes'));
 
-const recipes = localStorageRecipes && localStorageRecipes.length > 0 ?
-  localStorageRecipes :
+const recipes = localStorageRecipes ||
   [
     {
       id: shortid.generate(),
@@ -43,12 +42,26 @@ class RecipeContainer extends Component {
         name: '',
         ingredients: []
       },
-      isModalOpen: false
+      isModalOpen: false,
+      isDeleteEnabled: true
     };
   }
 
   componentDidMount () {
     this._updateLocalStorage(this.state.recipes);
+  }
+
+  _addRecipe () {
+    const currentRecipe = {
+      name: '',
+      ingredients: []
+    };
+
+    this.setState({
+      currentRecipe,
+      isModalOpen: true,
+      isDeleteEnabled: false
+    });
   }
 
   _openRecipe (e) {
@@ -58,7 +71,8 @@ class RecipeContainer extends Component {
 
     this.setState({
       currentRecipe,
-      isModalOpen: true
+      isModalOpen: true,
+      isDeleteEnabled: true
     });
   }
 
@@ -96,6 +110,20 @@ class RecipeContainer extends Component {
     this._resetCurrentRecipe();
   }
 
+  _deleteRecipe () {
+    const { recipes, currentRecipe } = this.state;
+    const index = recipes.findIndex(recipe => recipe.id === currentRecipe.id);
+    recipes.splice(index, 1);
+
+    this.setState({
+      isModalOpen: false,
+      recipes
+    });
+
+    this._updateLocalStorage(recipes);
+    this._resetCurrentRecipe();
+  }
+
   _handleChange (e) {
     const { name } = e.target;
     let { value } = e.target;
@@ -125,10 +153,11 @@ class RecipeContainer extends Component {
   }
 
   render () {
-    const { recipes, currentRecipe, isModalOpen } = this.state;
+    const { recipes, currentRecipe, isModalOpen, isDeleteEnabled } = this.state;
 
     return (
       <div className="recipe-modal-container">
+        <div className="add-recipe" role="button" tabIndex={0} onClick={() => this._addRecipe()}>+</div>
         <div className="recipe-container">
           {
             recipes.map((recipe, index) => (<Recipe
@@ -142,9 +171,11 @@ class RecipeContainer extends Component {
           <RecipeModal
             recipe={currentRecipe}
             isModalOpen={isModalOpen}
+            isDeleteEnabled={isDeleteEnabled}
             handleChange={e => this._handleChange(e)}
             saveRecipe={() => this._saveRecipe()}
             cancelSave={() => this._cancelSave()}
+            deleteRecipe={() => this._deleteRecipe()}
             resetCurrentRecipe={() => this._resetCurrentRecipe()}
           />
         }

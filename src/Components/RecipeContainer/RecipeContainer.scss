@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-auto-rows: 100px;
-  margin-top: 30px;
+  margin-top: 40px;
   grid-row-gap: 20px;
 }
 
@@ -14,6 +14,26 @@
   position: relative;
   overflow-y: auto;
   overflow-x: hidden;
+
+  .add-recipe {
+    color: var(--white);
+    background: var(--red);
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin: 47px 30px;
+    font-size: 29px;
+    font-weight: bold;
+    border: solid 1px var(--red);
+    padding: 5px 14px;
+    border-radius: 100%;
+    z-index: 10000;
+    box-shadow: 0 0 8px var(--light-black);
+  }
+
+  .add-recipe:hover {
+    cursor: pointer;
+  }
 }
 
 @media screen and (max-width: 783px) {

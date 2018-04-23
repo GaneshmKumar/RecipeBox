@@ -11,7 +11,15 @@ class RecipeModal extends Component {
   }
 
   render () {
-    const { recipe, handleChange, isModalOpen, saveRecipe, cancelSave } = this.props;
+    const {
+      recipe,
+      handleChange,
+      isModalOpen,
+      saveRecipe,
+      cancelSave,
+      deleteRecipe,
+      isDeleteEnabled
+    } = this.props;
 
     return (
       isModalOpen &&
@@ -25,7 +33,11 @@ class RecipeModal extends Component {
             </div>
             <div className="modal-footer">
               <button className="modal-save btn btn-success" onClick={saveRecipe}>Save</button>
-              <button className="modal-close btn btn-danger" onClick={cancelSave}>Cancel</button>
+              {
+                isDeleteEnabled &&
+                  <button className="btn btn-danger" onClick={deleteRecipe}>Delete</button>
+              }
+              <button className="modal-close btn btn-warning" onClick={cancelSave}>Cancel</button>
             </div>
           </div>
         </div>
